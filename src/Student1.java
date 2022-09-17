@@ -2,7 +2,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 
-public class Student {                             //class Student
+public class Student1 {                             //class Student
 
 	public static void main(String[] args) {            //main method
 		// TODO Auto-generated method stub
