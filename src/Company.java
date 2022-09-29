@@ -13,7 +13,7 @@ public class Company {
 	private int company_id;
 	private String company_name;
 	private String company_city;
-	private address address;
+	private Items Items;
 	public int getCompany_id() {
 		return company_id;
 	}
@@ -32,10 +32,10 @@ public class Company {
 	public void setCompany_city(String company_city) {
 		this.company_city = company_city;
 	}
-	public address getAddress() {
+	public address getItems() {
 		return address;
 	}
-	public void setAddress(address address) {
+	public void setItems(address address) {
 		this.address = address;
 	}
 	public static void main(String[] args) {
