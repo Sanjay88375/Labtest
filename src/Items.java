@@ -10,7 +10,7 @@ public class Items implements Serializable {
 	private String Item_Name;
     private String unitsSold;
     private int Company_id;
-    private Alien Alien;
+    private Company Company;
 
 	public int getItem_id() {
 		return Item_id;
@@ -44,11 +44,11 @@ public class Items implements Serializable {
 		Company_id = company_id;
 	}
 
-	public Alien getAlien() {
+	public Company getCompany() {
 		return Alien;
 	}
 
-	public void setAlien(Alien alien) {
+	public void setCompany(Alien alien) {
 		Alien = alien;
 	}
 
