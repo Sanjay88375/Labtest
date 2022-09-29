@@ -48,7 +48,7 @@ public class Items implements Serializable {
 		return Alien;
 	}
 
-	public void setCompany(Alien alien) {
+	public void setCompany(Company Company) {
 		Alien = alien;
 	}
 
