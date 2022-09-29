@@ -32,10 +32,10 @@ public class Company {
 	public void setCompany_city(String company_city) {
 		this.company_city = company_city;
 	}
-	public address getItems() {
+	public Items getItems() {
 		return address;
 	}
-	public void setItems(address address) {
+	public void setItems(Items Items) {
 		this.address = address;
 	}
 	public static void main(String[] args) {
