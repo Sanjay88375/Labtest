@@ -1,31 +1,59 @@
-package com.example.Mysqljdpc1;
+package com.example.oneTomany;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+
+/**
+ * Hello world!
+ *
+ */
 public class App 
 {
-    public static void main( String[] args ) 
+    public static void main( String[] args )
     {
-    	Configuration con = new Configuration().configure().addAnnotatedClass(Company.class);
-    	Configuration con1 = new Configuration().configure().addAnnotatedClass(Items.class);
-    	SessionFactory ss = con.buildSessionFactory();
-    	Session session = ss.openSession();
-    	Transaction t = session.beginTransaction();
-    	Company obj =new Company();
-    	obj.setCompany_id(1001);
-    	obj.setCompany_city("Mohali");
-    	obj.setCompany_name("SmartData");
-    	Items obj1= new Items();
-    	obj1.setCompany_id(1001);
-    	obj1.setItem_id(5001);
-    	obj1.setItem_Name("Ice Cream");
-    	obj1.setUnitsSold(15);
-    	obj.setItems(obj1);
-    	obj1.setCompany(obj);
-    	session.save(obj);
-    	t.commit();
-    	session.close();
-    	System.out.println( "Hello World!" );
+        System.out.println( "Hello World!" );
+        Configuration cfg = new Configuration();
+        cfg.configure("high.confi.xml");
+        SessionFactory factory = cfg.buildSessionFactory();
+        Teacher t1 = new Teacher();
+        t1.setT_id(12);
+        t1.setT_name("Marudula");
+        
+        course c1 = new course();
+        c1.setC_id(1);
+        c1.setC_name("java programming");
+        c1.setTeacher(t1);
+        
+        course c2 = new course();
+        c2.setC_id(2);
+        c2.setC_name("python programming");
+        c2.setTeacher(t1);
+        
+        course c3 = new course();
+        c3.setC_id(3);
+        c3.setC_name("Angular programming");
+        c3.setTeacher(t1);
+        List<course> l1 = new ArrayList();
+        l1.add(c1);
+        l1.add(c2);
+        l1.add(c3);
+        
+        
+        t1.setC(l1);
+        Session s= factory.openSession();
+        Transaction txt = s.beginTransaction();
+        s.save(t1);
+        s.save(c1);
+        s.save(c2);
+        s.save(c3);
+        txt.commit();
+        s.close();
+           
+        
     }
 }
